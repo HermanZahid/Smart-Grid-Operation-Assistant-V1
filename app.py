@@ -287,7 +287,7 @@ if st.button("Investigate with AI Agent"):
     with st.status("Agent is investigating the grid...", expanded=True) as status:
         try:
             response = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
+                model="openai/gpt-oss-120b",
                 messages=messages,
                 tools=tools,
                 tool_choice="auto",
@@ -313,7 +313,7 @@ if st.button("Investigate with AI Agent"):
                     )
 
                 final_response = client.chat.completions.create(
-                    model="llama-3.3-70b-versatile",
+                    model="openai/gpt-oss-120b",
                     messages=messages,
                     temperature=0.2,
                     max_tokens=1500,
